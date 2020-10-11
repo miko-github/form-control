@@ -4,19 +4,116 @@
 	&,
 	& * {
 		transition: 0.25s ease all;
+		z-index: 1;
 	}
+	@extend %w-100;
+	padding: 90px;
+	label.form-control-input {
+		& {
+			@extend %rel;
+			width: 250px;
+		}
+		input,
+		.label,
+		.status {
+			@extend %wa-100;
+		}
+		.label {
+			@include abs(0, 0);
+			text-transform: uppercase;
+			transform: translateX(6%);
+		}
+		input {
+			@extend %reset-none;
+			border: 3px solid transparent;
+			border-bottom-color: $sky; // default-unfocused
+			border-radius: 0.3rem;
+			padding: 9px;
+		}
 
-	@extend %rel;
-	@extend %in-block;
-	overflow: hidden;
-	margin: 3px;
-
-	input {
-		@extend %input-clear;
-		padding: 9px;
-		border-bottom: 3px solid $primary;
-		&:focus {
-			border-bottom-color: $info;
+		& {
+			&.focus .label {
+				transform: translate(-3%, -200%) scale(0.9);
+			}
+			& {
+				.status {
+					color: $primary;
+					&::before {
+						content: '';
+						display: inline-block;
+						font-family: FontAwesome;
+						margin-right: 9px;
+						margin-left: 5px;
+					}
+				}
+				input:focus {
+					border-bottom-color: $info;
+				}
+			}
+			&.valid {
+				.status {
+					color: darken($light-success, 25);
+					&::before {
+						content: '\f00c';
+					}
+				}
+				input {
+					& {
+						border-bottom-color: rgba($dark-success, 0.5);
+					}
+					&:focus {
+						border-bottom-color: $dark-success;
+					}
+				}
+			}
+			&.in-valid {
+				.status {
+					color: $rose;
+					&::before {
+						content: '\f071';
+					}
+				}
+				input {
+					& {
+						border-bottom-color: rgba($rose, 0.5);
+					}
+					&:focus {
+						border-bottom-color: $rose;
+					}
+				}
+			}
+			&.warn {
+				.status {
+					color: darken($dark-gold, 25);
+					&::before {
+						content: '\f252';
+					}
+				}
+				input {
+					& {
+						border-bottom-color: rgba($dark-gold, 0.5);
+					}
+					&:focus {
+						border-bottom-color: $dark-gold;
+					}
+				}
+			}
+			&.disabled {
+				.status {
+					color: $gray;
+					&::before {
+						content: '\f0eb';
+					}
+				}
+				input {
+					& {
+						border-bottom-color: rgba($light-gray, 1);
+					}
+					&:focus {
+						border-bottom-color: $light-gray;
+					}
+				}
+			}
 		}
 	}
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -19,40 +20,130 @@ button {
   font-family: "ubuntu";
 }
 
-.form-control input {
-  outline: none;
-  border: none;
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-}
-
 button {
   cursor: pointer;
 }
 
-.form-control {
+.form-control label.form-control-input {
   position: relative;
 }
 
-.form-control {
-  display: inline-block;
+.form-control, .form-control label.form-control-input input,
+.form-control label.form-control-input .label,
+.form-control label.form-control-input .status {
+  width: 100%;
+}
+
+.form-control label.form-control-input input,
+.form-control label.form-control-input .label,
+.form-control label.form-control-input .status {
+  max-width: 100%;
+}
+
+.form-control label.form-control-input input,
+.form-control label.form-control-input .label,
+.form-control label.form-control-input .status {
+  min-width: 100%;
+}
+
+.form-control label.form-control-input input {
+  stroke: none;
+}
+
+.form-control label.form-control-input input {
+  border: none;
+}
+
+.form-control label.form-control-input input {
+  box-shadow: none;
 }
 
 .form-control {
-  overflow: hidden;
-  margin: 3px;
+  padding: 90px;
 }
 .form-control, .form-control * {
   transition: 0.25s ease all;
+  z-index: 1;
 }
-.form-control input {
+.form-control label.form-control-input {
+  width: 250px;
+}
+.form-control label.form-control-input .label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  transform: translateX(6%);
+}
+.form-control label.form-control-input input {
+  border: 3px solid transparent;
+  border-bottom-color: #b3cde0;
+  border-radius: 0.3rem;
   padding: 9px;
-  border-bottom: 3px solid #005b96;
 }
-.form-control input:focus {
+.form-control label.form-control-input.focus .label {
+  transform: translate(-3%, -200%) scale(0.9);
+}
+.form-control label.form-control-input .status {
+  color: #005b96;
+}
+.form-control label.form-control-input .status::before {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  margin-right: 9px;
+  margin-left: 5px;
+}
+.form-control label.form-control-input input:focus {
   border-bottom-color: #63ace5;
+}
+.form-control label.form-control-input.valid .status {
+  color: #37a970;
+}
+.form-control label.form-control-input.valid .status::before {
+  content: "";
+}
+.form-control label.form-control-input.valid input {
+  border-bottom-color: rgba(14, 154, 167, 0.5);
+}
+.form-control label.form-control-input.valid input:focus {
+  border-bottom-color: #0e9aa7;
+}
+.form-control label.form-control-input.in-valid .status {
+  color: #f7746e;
+}
+.form-control label.form-control-input.in-valid .status::before {
+  content: "";
+}
+.form-control label.form-control-input.in-valid input {
+  border-bottom-color: rgba(247, 116, 110, 0.5);
+}
+.form-control label.form-control-input.in-valid input:focus {
+  border-bottom-color: #f7746e;
+}
+.form-control label.form-control-input.warn .status {
+  color: #dc9700;
+}
+.form-control label.form-control-input.warn .status::before {
+  content: "";
+}
+.form-control label.form-control-input.warn input {
+  border-bottom-color: rgba(255, 204, 92, 0.5);
+}
+.form-control label.form-control-input.warn input:focus {
+  border-bottom-color: #ffcc5c;
+}
+.form-control label.form-control-input.disabled .status {
+  color: #4a4e4d;
+}
+.form-control label.form-control-input.disabled .status::before {
+  content: "";
+}
+.form-control label.form-control-input.disabled input {
+  border-bottom-color: #949a98;
+}
+.form-control label.form-control-input.disabled input:focus {
+  border-bottom-color: #949a98;
 }
 
 /*# sourceMappingURL=index.css.map */
