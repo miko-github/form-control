@@ -17,16 +17,15 @@
 			crossorigin="anonymous"
 		></script>
 		<title>index</title>
-		<script>
-			dock.ready(() => {
-				let ctrl = dock._class('form-control', 0);
-				let input = ctrl.firstElementChild;
-			});
-		</script>
+		<script type="text/javascript" src="./script.js"></script>
 	</head>
 	<body>
 		<div class="form-control">
-			<input type="text" />
+			<label class="form-control-input focus" data-email>
+				<div class="label">Hello</div>
+				<input class="textbox" type="text" />
+				<div class="status">name</div>
+			</label>
 		</div>
 	</body>
 </html>
