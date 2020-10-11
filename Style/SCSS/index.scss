@@ -1,4 +1,22 @@
-@forward 'holders';
-@forward 'mixins';
-@forward 'variables';
-@forward 'objects';
+@import './../../../../../../../../home/admin/.cdn/style/style.scss';
+
+.form-control {
+	&,
+	& * {
+		transition: 0.25s ease all;
+	}
+
+	@extend %rel;
+	@extend %in-block;
+	overflow: hidden;
+	margin: 3px;
+
+	input {
+		@extend %input-clear;
+		padding: 9px;
+		border-bottom: 3px solid $primary;
+		&:focus {
+			border-bottom-color: $info;
+		}
+	}
+}

@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+body {
+  background: #f4f4f8;
+  color: #2a363b;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button {
+  font-size: 16px;
+  font-family: "ubuntu";
+}
+
+.form-control input {
+  outline: none;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.form-control {
+  position: relative;
+}
+
+.form-control {
+  display: inline-block;
+}
+
+.form-control {
+  overflow: hidden;
+  margin: 3px;
+}
+.form-control, .form-control * {
+  transition: 0.25s ease all;
+}
+.form-control input {
+  padding: 9px;
+  border-bottom: 3px solid #005b96;
+}
+.form-control input:focus {
+  border-bottom-color: #63ace5;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -4,7 +4,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<meta charset="utf-8" />
 		<link type="image/x-icon" rel="shortcut icon" href="./icon.png" />
-		<link type="text/css" rel="stylesheet" href="./style.css" />
+		<link type="text/css" rel="stylesheet" href="./Style/CSS/index.css" />
 		<link
 			rel="stylesheet"
 			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -18,10 +18,15 @@
 		></script>
 		<title>index</title>
 		<script>
-			dock.ready(() => {});
+			dock.ready(() => {
+				let ctrl = dock._class('form-control', 0);
+				let input = ctrl.firstElementChild;
+			});
 		</script>
 	</head>
 	<body>
-		<div class="form-control">base</div>
+		<div class="form-control">
+			<input type="text" />
+		</div>
 	</body>
 </html>
